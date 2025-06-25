@@ -1,0 +1,154 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.chat-container {
+  max-width: 650px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.chat-history {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 15px;
+  height: 300px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.assistant {
+  justify-content: flex-start;
+}
+
+.bubble {
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 75%;
+  font-size: 15px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.user .bubble {
+  background-color: #dcf8c6;
+  color: #000;
+}
+
+.assistant .bubble {
+  background-color: #ececec;
+  color: #000;
+}
+
+/* Chat input area layout */
+.chat-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.chat-input input[type="text"] {
+  flex: 1;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.loader {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #4caf50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .chat-container {
+    margin: 20px;
+    padding: 16px;
+  }
+
+  .bubble {
+    font-size: 14px;
+  }
+
+  .chat-history {
+    height: 250px;
+  }
+}
